@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import clickButton from './Components/Button/clickButton.JSX'
 import Button from './Components/Button/clickButton.JSX'
+import UniversalButton from './Components/UniversalButton/UniversalButton'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -20,6 +22,9 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <Button name ="s"/>
+        <UniversalButton size="large" color="primary" onClick={() => alert('Primary Button Clicked')}>
+        Primary Button
+      </UniversalButton>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>

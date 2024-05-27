@@ -1,0 +1,39 @@
+.universal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &.large {
+      padding: 15px 30px;
+    }
+  
+    &.small {
+      padding: 5px 10px;
+    }
+  
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  .primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .danger {
+    background-color: #dc3545;
+    color: white;
+  }
