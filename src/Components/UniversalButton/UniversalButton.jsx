@@ -12,9 +12,18 @@ const UniversalButton = ({ type = 'button', size, color, onClick, children }) =>
 
 export default UniversalButton;
 /*
+How to use: instead [] place your params or functions
 const [count,setCount] = useState(0)
 
 <UniversalButton size="[size_name]" color="[color_name]" onClick={() =>[your_function]}>
         [Button Text]
 </UniversalButton>
+
+
+example
+const [count, setCount] = useState(0)
+<UniversalButton size="large" color="primary" onClick={() => setCount((count) => count+1)}>
+         count {count}
+        </UniversalButton>
+
 */
