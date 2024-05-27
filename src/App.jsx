@@ -8,7 +8,7 @@ import UniversalButton from './Components/UniversalButton/UniversalButton'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [count_a, setCoun] = useState(0)
+  const [count_a, setCount_a] = useState(0)
 
   return (
     <>
@@ -26,7 +26,7 @@ function App() {
         <UniversalButton size="large" color="primary" onClick={() => setCount((count) => count+1)}>
          count {count}
         </UniversalButton>
-        <UniversalButton size="large" color="primary" onClick={() => setCoun((count_a) => count_a+1)}>
+        <UniversalButton size="large" color="primary" onClick={() => setCount_a((count_a) => count_a+1)}>
          count {count_a}
         </UniversalButton>
         <p>
