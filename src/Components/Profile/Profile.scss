@@ -1,0 +1,36 @@
+.avatarCard {
+    display: inline-flex;
+    //flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+
+    //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    //width: fit-content; // Adjust the width as needed
+
+}
+
+.dataCard {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.avatarLogo {
+    width: 240px;
+    height: 240px;
+
+    overflow: hidden;
+    //margin-bottom: 18px;
+    margin-right: 18px;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+}
+
+.personName {
+    margin-bottom: 32px;
+    font-size: 16px; // Adjust font size as needed
+    font-weight: bold; // Make the text bold
+}
