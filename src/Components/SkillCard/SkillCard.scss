@@ -1,0 +1,90 @@
+// Colors
+$background-color: #444444;
+
+// Typography
+$font-size-base: 14px;
+
+// Spacing
+$spacing-small: 16px;
+$spacing-medium: 32px;
+
+// Skill Card Styles
+.skillCard {
+    background-color: $background-color;
+    border-width: 4px;
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+    width: 720px; // Ensures the card takes full width\
+    border-radius: 16px;
+    height: auto;
+    
+    .topPart {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+
+    .nameLevel {
+        display: flex;
+        justify-content: space-between; // Distributes items evenly in the container
+        align-items: center; // Aligns items vertically in the middle
+        height: 50px;
+        margin-left: $spacing-small;
+        margin-right: $spacing-small; // Adds left and right margins for consistent spacing
+    }
+
+    .skillLevel {
+        display: flex;
+        flex-direction: row;
+        align-items: center; // Aligns items vertically in the middle
+
+        // Explicitly define widths for the buttons and the digit to prevent shifting
+        .sminus,
+        .splus {
+            flex: 0 0 auto; // Prevents growing or shrinking
+
+            width: 30px; // Set a fixed width for buttons
+        }
+
+        .skillDigit {
+            flex: 0 0 auto; // Prevents growing or shrinking
+            text-align: center; // Centers the text
+            width: 50px; // Set a fixed width for the digit, accommodating up to three digits comfortably
+        }
+    }
+
+    .skillDescription {
+        font-size: 32px; // Sets base font size for readability
+        text-align: left; // Centers the description text
+        white-space: normal; // Allows text to wrap
+        word-wrap: break-word; // Breaks words to prevent overflow
+        max-width: 720px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+
+Button Styles .UniversalButton {
+    &.remove {
+        margin: 8px; // Pushes the remove button to the right
+    }
+
+    &.sminus,
+    &.splus {
+    }
+}
+
+// Skill Name and Digit Styling
+.skillName {
+    font-size: 32px;
+    //margin-right: 64px;
+    margin-left: 16px;
+}
+.skillDigittext {
+    width: 144px;
+
+    font-weight: bold; // Makes the skill name and digit bold for emphasis
+}

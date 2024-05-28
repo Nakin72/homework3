@@ -1,43 +1,47 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import clickButton from './Components/Button/clickButton.JSX'
-import Button from './Components/Button/clickButton.JSX'
 import UniversalButton from './Components/UniversalButton/UniversalButton'
+import SkillsManager from './Components/JS/SkillManager.js'; // Adjust the path as necessary
+
+import { useCallback } from 'react'
+import React from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [count_a, setCount_a] = useState(0)
+  const [skills, setSkills] = useState([]);
+  const [newSkillName, setNewSkillName] = useState('');
+  const [newSkillDescription, setNewSkillDescription] = useState('');
+
+  function addNewSkill(skillNameText, skillDescription) {
+    const newSkillCard = React.cloneElement(
+      SkillsManager.createNewSkillCard(skillNameText, skillDescription),
+      { removeCallback: () => setSkills(skills.filter((_, index) => index !== skills.indexOf(newSkillCard))) }
+    );
+    setSkills(prevSkills => [...prevSkills, newSkillCard]);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <Button name="s" />
-        <UniversalButton size="large" color="primary" onClick={() => setCount((count) => count+1)}>
-         count {count}
-        </UniversalButton>
-        <UniversalButton size="large" color="primary" onClick={() => setCount_a((count_a) => count_a+1)}>
-         count {count_a}
-        </UniversalButton>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      {skills.map((skill, index) => (
+        <React.Fragment key={index}>
+          {React.cloneElement(skill, {
+            removeCallback: () => setSkills(skills.filter((_, i) => i !== index))
+          })}
+        </React.Fragment>
+      ))}
+      <input
+        type="text"
+        placeholder="Skill Name"
+        value={newSkillName}
+        onChange={(e) => setNewSkillName(e.target.value)}
+      />
+      <textarea
+        placeholder="Skill Description"
+        value={newSkillDescription}
+        onChange={(e) => setNewSkillDescription(e.target.value)}
+      />
+      <button onClick={() => addNewSkill(newSkillName, newSkillDescription)}>Add Skill</button>
+    </div>
+  );
 }
 
 export default App

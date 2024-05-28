@@ -1,10 +1,10 @@
 import React from 'react';
-import './UniversalButton.scss'; // Assuming you have styles defined here
+import './UniversalButton.scss'; 
 
 
-const UniversalButton = ({ type = 'button', size, color, onClick, children }) => {
+function UniversalButton({b_name,type = 'button', size, color, onClick, children}){
     return (
-        <button className={`universal-button ${size} ${color}`} onClick={onClick} type={type}>
+        <button className={`universal-button ${size} ${color}`} onClick={onClick}  type={type}>
             {children}
         </button>
     );
